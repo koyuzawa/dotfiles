@@ -17,11 +17,19 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " NeoBundle 'Shougo/neosnippet.vim'
 " NeoBundle 'Shougo/neosnippet-snippets'
 " NeoBundle 'tpope/vim-fugitive'
-" NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'kien/ctrlp.vim'
 " NeoBundle 'flazz/vim-colorschemes'
 
 " You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc.vim', {
+      \         'build' : {
+      \           'windows' : 'tools\\update-dll-mingw',
+      \           'cygwin' : 'make -f make_cygwin.mak',
+      \           'mac' : 'make -f make_mac.mak',
+      \           'linux' : 'make',
+      \           'unix' : 'gmake',
+      \         }
+      \       }
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 NeoBundle 'mattn/emmet-vim'
@@ -38,20 +46,18 @@ filetype plugin indent on
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
-
-NeoBundle 'Shougo/vimproc.vim', {
-      \   'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'linux' : 'make',
-      \     'unix' : 'gmake',
-      \   }
-      \ }
-
+ 
+ 
 
 " for emmet
 let g:user_emmet_leader_key='<C-E>'
 
 syntax enable
 colorscheme desert
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+set number
