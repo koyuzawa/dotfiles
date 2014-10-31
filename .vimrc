@@ -3,11 +3,11 @@ if has('vim_starting')
   set nocompatible               " Be iMproved
 
   " Required:
-  set runtimepath+=/home/vagrant/.vim/bundle/neobundle.vim/
+  set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('/home/vagrant/.vim/bundle'))
+call neobundle#begin(expand("$HOME/.vim/bundle"))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -46,8 +46,8 @@ filetype plugin indent on
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
- 
- 
+
+
 
 " for emmet
 let g:user_emmet_leader_key='<C-E>'
@@ -68,6 +68,7 @@ set softtabstop=2
 
 set number
 
+" 空白の自動削除
 function! s:remove_dust()
   let cursor = getpos(".")
   " 保存時に行末の空白を除去する
@@ -78,4 +79,4 @@ function! s:remove_dust()
   unlet cursor
 endfunction
 autocmd BufWritePre * call <SID>remove_dust()
-                               
+
