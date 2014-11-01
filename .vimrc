@@ -34,6 +34,8 @@ NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 NeoBundle 'mattn/emmet-vim'
 
+" sublimeみたいな入力
+NeoBundle 'terryma/vim-multiple-cursors'
 
 " Required:
 call neobundle#end()
@@ -80,3 +82,4 @@ function! s:remove_dust()
 endfunction
 autocmd BufWritePre * call <SID>remove_dust()
 
+inoremap <silent> jj <ESC>
