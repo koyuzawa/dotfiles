@@ -18,7 +18,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " NeoBundle 'Shougo/neosnippet-snippets'
 " NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
-" NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'flazz/vim-colorschemes'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimproc.vim', {
@@ -80,6 +80,14 @@ set backspace=indent,eol,start
 
 set nowrap
 
+set history=200
+
+" 検索結果のハイライト
+set hls
+
+" tab補完候補を一覧表示する
+set wildmode=longest,list
+
 " 空白の自動削除
 function! s:remove_dust()
   let cursor = getpos(".")
@@ -94,3 +102,8 @@ autocmd BufWritePre * call <SID>remove_dust()
 
 " jjにESCをバインド
 inoremap <silent> jj <ESC>
+
+" コマンドモードでUpとDownの
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
