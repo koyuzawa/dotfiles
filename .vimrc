@@ -1,4 +1,4 @@
-"NeoBundle Scripts-----------------------------
+"NeoBundle Scripts------------------------
 if has('vim_starting')
   set nocompatible               " Be iMproved
 
@@ -63,12 +63,22 @@ let g:ctrlp_open_new_file       = 1   " 新規ファイル作成時にタブで�
 syntax enable
 colorscheme desert
 
+" for tab key
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+" 行数
 set number
+
+" カーソル位置の表示
+set ruler
+
+" insertモードでbackspaceを使う
+set backspace=indent,eol,start
+
+set nowrap
 
 " 空白の自動削除
 function! s:remove_dust()
@@ -82,4 +92,5 @@ function! s:remove_dust()
 endfunction
 autocmd BufWritePre * call <SID>remove_dust()
 
+" jjにESCをバインド
 inoremap <silent> jj <ESC>
