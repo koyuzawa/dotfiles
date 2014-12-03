@@ -37,6 +37,8 @@ NeoBundle 'mattn/emmet-vim'
 " sublimeみたいな入力
 NeoBundle 'terryma/vim-multiple-cursors'
 
+NeoBundle 'sudo.vim'
+
 " Required:
 call neobundle#end()
 
@@ -48,8 +50,8 @@ filetype plugin indent on
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
-
-
+set encoding=utf-8
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 
 " for emmet
 let g:user_emmet_leader_key='<C-E>'
@@ -107,3 +109,10 @@ inoremap <silent> jj <ESC>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+" バッファ操作
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> [B :blast<CR>
+
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/':'%%'
