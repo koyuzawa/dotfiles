@@ -206,3 +206,7 @@ endfunction
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
+imap " ""<LEFT>
+imap ' ''<LEFT>
+imap < <><LEFT>
+
